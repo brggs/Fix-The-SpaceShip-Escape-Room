@@ -1,21 +1,24 @@
 from microbit import *
+import radio
 
-POLL_INTERVAL = 200
-charge_level = 0
-
+CHARGE_RATE = 3
 LEVEL_DISPLAY = [Image('00000:00000:00000:00000:00900:'),
         Image('00000:00000:00000:00000:99999:'),
         Image('00000:00000:00000:99999:99999:'),
         Image('00000:00000:99999:99999:99999:'),
         Image('00000:99999:99999:99999:99999:'),
-        Image.SMILE]
+        Image.HAPPY]
+POLL_INTERVAL = 50
+
+charge_level = 0
 
 while True:
     if accelerometer.was_gesture('shake'):
-        charge_level += 1
+        charge_level += CHARGE_RATE
 
     if charge_level > 50:
         display.show(LEVEL_DISPLAY[5])
+        break
     elif charge_level > 40:
         display.show(LEVEL_DISPLAY[4])
     elif charge_level > 30:
@@ -26,10 +29,13 @@ while True:
         display.show(LEVEL_DISPLAY[1])
     else:
         display.show(LEVEL_DISPLAY[0])
-        break
     
-    sleep(50)
-
-while True:
-    pin0.write_digital(1)
     sleep(POLL_INTERVAL)
+
+radio.on()
+while radio.receive() != "Battery_ACK":
+    radio.send("Battery_GO")
+    sleep(1000)
+
+display.show(Image.YES)
+radio.off()

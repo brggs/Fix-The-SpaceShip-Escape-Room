@@ -89,19 +89,20 @@ radio.on()
 while True:
     if pin0.is_touched():
     #if radio.receive() == "Fuel_GO":
-        radio.send("Fuel_Ack")
+        radio.send("Fuel_ACK")
         break
 
     show_time(start)
     sleep(POLL_INTERVAL)
 
-oled_add_text(0, 1, ' Connect the')
+oled_add_text(0, 1, ' Charge the ')
 oled_add_text(0, 2, '  battery.  ')
 
 # Step 3 - check the battery connected
 while True:
     if pin0.is_touched():
-    #if pin1.read_digital() == 1:
+    #if radio.receive() == "Battery_GO":
+        radio.send('Battery_ACK')
         break
     show_time(start)
     sleep(POLL_INTERVAL)
@@ -112,7 +113,8 @@ oled_add_text(0, 2, '  message.  ')
 # Step 4 - check for navigation go
 while True:
     if pin0.is_touched():
-    #if pin1.read_digital() == 1:
+    #if radio.receive() == "Nav_GO":
+        radio.send('Nav_ACK')
         break
     show_time(start)
     sleep(POLL_INTERVAL)
