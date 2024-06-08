@@ -3,12 +3,10 @@ import radio
 
 LOW_LEVEL = 600
 HIGH_LEVEL = 700
-
-POLL_INTERVAL = 300
+POLL_INTERVAL = 50
+CHECK_COUNT = 50
 
 radio.config(group=42, power = 4)
-radio.on()
-
 correct_count = 0
 
 while True:
@@ -20,12 +18,18 @@ while True:
     elif level > LOW_LEVEL:
         display.show(Image.HAPPY)
         correct_count += 1
-
-        if correct_count > 9:
-            radio.send("Fuel_GO")
-            correct_count = 0
+        if correct_count > CHECK_COUNT:
+            break
     else:
         display.show(Image.SAD)
         correct_count = 0
     
     sleep(POLL_INTERVAL)
+
+radio.on()
+while radio.receive() != "Fuel_Ack":
+    radio.send("Fuel_GO")
+    sleep(1000)
+
+display.show(Image.YES)
+radio.off()

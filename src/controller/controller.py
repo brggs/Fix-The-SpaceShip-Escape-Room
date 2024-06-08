@@ -65,7 +65,6 @@ oled_initialize()
 oled_clear_screen()
 
 radio.config(group=42, power = 4)
-radio.on()
 
 oled_add_text(0, 1, ' Push button')
 oled_add_text(0, 2, '  to start!')
@@ -74,7 +73,7 @@ oled_add_text(0, 2, '  to start!')
 while True:
     if pin0.is_touched():
         break
-    sleep(50)
+    sleep(POLL_INTERVAL)
 
 oled_add_text(0, 0, 'Next goal:    ')
 oled_add_text(0, 1, ' Refill the  ')
@@ -84,11 +83,13 @@ oled_add_text(0, 3, 'Time: 00:00')
 running = True
 start = running_time()
 display.show(Image.ASLEEP)
+radio.on()
 
 # Step 2 - check for fuel Go
 while True:
     if pin0.is_touched():
     #if radio.receive() == "Fuel_GO":
+        radio.send("Fuel_Ack")
         break
 
     show_time(start)
