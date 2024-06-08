@@ -51,13 +51,6 @@ oled_clear_screen()
 ## Start of our code
 ############################
 
-LEVEL_1 = Image('00000:'
-               '00000:'
-               '00000:'
-               '00000:'
-               '99999')
-
-
 POLL_INTERVAL = 200
 
 time = 0

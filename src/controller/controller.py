@@ -43,22 +43,32 @@ def oled_add_text(x, y, text):
     ind0 = x * 10 + y * 128 + 1
     i2c.write(OLED_ADDR, b'\x40' + oled_screen[ind0 : (ind+1)])
 
-oled_initialize()
-oled_clear_screen()
-
-
 ############################
 ## Start of our code
 ############################
 
-POLL_INTERVAL = 200
+POLL_INTERVAL = 50
 
 time = 0
 start = 0
 running = False
 
+def show_time(start):
+    time = int((running_time() - start)/1000)
+    mins = time / 60
+    seconds = time % 60
+    
+    oled_add_text(6, 3, "%02d" % (mins,))
+    oled_add_text(9, 3, "%02d" % (seconds,))
+
+oled_initialize()
+oled_clear_screen()
+
 radio.config(group=42, power = 4)
 radio.on()
+
+oled_add_text(0, 1, ' Push button')
+oled_add_text(0, 2, '  to start!')
 
 # Push the big button to start
 while True:
@@ -66,32 +76,70 @@ while True:
         break
     sleep(50)
 
+oled_add_text(0, 0, 'Next goal:    ')
+oled_add_text(0, 1, ' Refill the  ')
+oled_add_text(0, 2, '  fuel tank. ')
+oled_add_text(0, 3, 'Time: 00:00')
+
 running = True
 start = running_time()
 display.show(Image.ASLEEP)
 
 # Step 2 - check for fuel Go
 while True:
-    if radio.receive() == "Fuel_GO":
+    if pin0.is_touched():
+    #if radio.receive() == "Fuel_GO":
         break
+
+    show_time(start)
     sleep(POLL_INTERVAL)
+
+oled_add_text(0, 1, ' Connect the')
+oled_add_text(0, 2, '  battery.  ')
 
 # Step 3 - check the battery connected
 while True:
-    if pin1.read_digital() == 1:
+    if pin0.is_touched():
+    #if pin1.read_digital() == 1:
         break
+    show_time(start)
     sleep(POLL_INTERVAL)
 
+oled_add_text(0, 1, ' Send the   ')
+oled_add_text(0, 2, '  message.  ')
+
 # Step 4 - check for navigation go
+while True:
+    if pin0.is_touched():
+    #if pin1.read_digital() == 1:
+        break
+    show_time(start)
+    sleep(POLL_INTERVAL)
+
+oled_add_text(0, 1, 'Enter launch')
+oled_add_text(0, 2, '     code.  ')
 
 # Step 5 - check for launch sequence
+while True:
+    if pin0.is_touched():
+    #if pin1.read_digital() == 1:
+        break
+    show_time(start)
+    sleep(POLL_INTERVAL)
+    
+oled_add_text(0, 1, ' Press the  ')
+oled_add_text(0, 2, '  button!   ')
 
 # Final - check for big button press
 while True:
     if pin0.is_touched():
         break
-    sleep(50)
+    show_time(start)
+    sleep(POLL_INTERVAL)
 
-# Display the time on the OLED (or 7 seg?)
-time = running_time() - start
-display.scroll(int(time/1000))
+
+oled_add_text(0, 0, '************')
+oled_add_text(0, 1, 'Well Done!!!')
+oled_add_text(0, 2, '************')
+
+show_time(start)
