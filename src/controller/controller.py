@@ -64,7 +64,7 @@ def show_time(start):
 oled_initialize()
 oled_clear_screen()
 
-radio.config(group=42, power = 4)
+radio.config(group=42)
 
 oled_add_text(0, 1, ' Push button')
 oled_add_text(0, 2, '  to start!')
@@ -109,6 +109,7 @@ oled_add_text(0, 1, ' Send the   ')
 oled_add_text(0, 2, '  message.  ')
 
 # Step 4 - check for navigation go
+#TODO Activate the task MB - Step4_START
 while True:
     if radio.receive() == "Nav_GO":
         radio.send('Nav_ACK')

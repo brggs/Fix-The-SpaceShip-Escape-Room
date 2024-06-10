@@ -57,30 +57,82 @@ time = 0
 start = 0
 running = False
 
-radio.config(group=42, power = 4)
+radio.config(group=42)
 radio.on()
 
-oled_add_text(0, 0, '--Sensors---')
-oled_add_text(0, 1, ' C: Jungle')
-oled_add_text(0, 2, ' A: Oxygen')
-oled_add_text(0, 3, ' T: Offline')
+# Wait for the signal to start step 4
+display.show(Image.ASLEEP)
 
-message_amount = 0
+while radio.receive() != "Step4_START":
+    sleep(1000)
 
+radio.send("Step4_START_ACK")
+
+# Step 4 - Set the course
+display.show(Image.CONFUSED)
+
+showSensors = True
 while True:
-
-    # TODO check the direction is set
-    #pos = pin0.read_analog()
+    if button_a.was_pressed():
+        showSensors = True
+    if button_b.was_pressed():
+        showSensors = False
     
+    if showSensors:
+        oled_add_text(0, 0, '--Sensors---')
+        oled_add_text(0, 1, ' C: Jungle  ')
+        oled_add_text(0, 2, ' A: Oxygen  ')
+        oled_add_text(0, 3, ' T: 28 deg  ')
+    else:
+        dir_input = pin0.read_analog()
+        dir = ''
+
+        if dir_input > 880:
+            dir = 'S'
+        elif dir_input > 770:
+            dir = 'SE'
+        elif dir_input > 660:
+            dir = 'E'
+        elif dir_input > 550:
+            dir = 'NE'
+        elif dir_input > 440:
+            dir = 'N'
+        elif dir_input > 330:
+            dir = 'NW'
+        elif dir_input > 220:
+            dir = 'W'
+        elif dir_input > 110:
+            dir = 'SW'
+        else:
+            dir = 'S'
+        
+        dist_input = pin0.read_analog() #TODO Pin1
+        dist = int(dist_input / 100)
+        
+        oled_add_text(0, 0, '-Set Course-')
+        oled_add_text(0, 1, ' Dir:   %s   ' % (dir))
+        oled_add_text(0, 2, ' Dist:  %2d   ' % (dist))
+        oled_add_text(0, 3, '            ')
+
+        if dir == 'NE' and dist == 5:
+            break
+
+
+# Step 5 - Send a message
+
+display.clear()
+oled_add_text(0, 0, '---Comms----')
+oled_add_text(0, 1, '   Waiting  ')
+oled_add_text(0, 2, '    for     ')
+oled_add_text(0, 3, '   message  ')
+        
+message_amount = 0
+while True:    
     if microphone.sound_level() > 100:
         message_amount += 0.5
         if message_amount >= 5:
-            # If right direction was set
             if True:
                 break
-            else:
-                display.show(Image.SAD, delay=1000)
-                message_amount = 0
 
     for y in range(5):
         if message_amount > (4 - y):
@@ -90,7 +142,10 @@ while True:
     sleep(500)
 
 display.show(Image.HAPPY)
+oled_clear_screen()
 
 while True:
-    radio.send("Nav_GO")
+    radio.send("Step5_GO")
     sleep(500)
+
+
