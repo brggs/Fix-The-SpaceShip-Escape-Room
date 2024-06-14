@@ -33,8 +33,8 @@ while True:
     sleep(POLL_INTERVAL)
 
 radio.on()
-while radio.receive() != "Battery_ACK":
-    radio.send("Battery_GO")
+while radio.receive() != "Battery ACK":
+    radio.send("Battery GO")
     sleep(1000)
 
 display.show(Image.YES)

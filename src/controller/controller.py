@@ -49,27 +49,47 @@ def oled_add_text(x, y, text):
 
 POLL_INTERVAL = 50
 
+button_pressed = 0 
 time = 0
 start = 0
 running = False
 
+def read_inputs():
+    global button_pressed
+    
+    button_raw = pin1.read_analog()
+    if button_raw < 20:
+        button_pressed = 1
+    elif button_raw < 70:
+        button_pressed = 2
+    elif button_raw < 110:
+        button_pressed = 3
+    elif button_raw < 150:
+        button_pressed = 4
+    elif button_raw < 600:
+        button_pressed = 5
+    else:
+        button_pressed = 0
+        
+    if button_pressed > 0:
+        radio.send('Button %d' % button_pressed)
+    
+    if pin2.is_touched():
+        radio.send('Flick Switch')
+        
 def show_time(start):
     time = int((running_time() - start)/1000)
     mins = time / 60
     seconds = time % 60
-    
     oled_add_text(6, 3, "%02d" % (mins,))
     oled_add_text(9, 3, "%02d" % (seconds,))
 
 oled_initialize()
 oled_clear_screen()
-
 radio.config(group=42)
 
 oled_add_text(0, 1, ' Push button')
 oled_add_text(0, 2, '  to start!')
-
-# Push the big button to start
 while True:
     if pin0.is_touched():
         break
@@ -85,7 +105,7 @@ start = running_time()
 display.show(Image.ASLEEP)
 radio.on()
 
-# Step 2 - check for fuel Go
+# Step 1 - check for fuel Go
 while True:
     if radio.receive() == "Fuel_GO":
         radio.send("Fuel_ACK")
@@ -94,10 +114,9 @@ while True:
     show_time(start)
     sleep(POLL_INTERVAL)
 
+# Step 2 - check the battery connected
 oled_add_text(0, 1, ' Charge the ')
 oled_add_text(0, 2, '  battery.  ')
-
-# Step 3 - check the battery connected
 while True:
     if radio.receive() == "Battery_GO":
         radio.send('Battery_ACK')
@@ -105,39 +124,137 @@ while True:
     show_time(start)
     sleep(POLL_INTERVAL)
 
-oled_add_text(0, 1, ' Send the   ')
-oled_add_text(0, 2, '  message.  ')
+# Step 3 - check for navigation go
+oled_add_text(0, 1, ' Set the   ')
+oled_add_text(0, 2, '  course.  ')
 
-# Step 4 - check for navigation go
-#TODO Activate the task MB - Step4_START
+# Activate the Science Console
+radio.send('Step3 START')
 while True:
-    if radio.receive() == "Nav_GO":
-        radio.send('Nav_ACK')
+    if radio.receive() == "Nav GO":
         break
     show_time(start)
     sleep(POLL_INTERVAL)
 
-oled_add_text(0, 1, 'Enter launch')
-oled_add_text(0, 2, '     code.  ')
+# Step 4 - send the message
+oled_add_text(0, 1, ' Send a     ')
+oled_add_text(0, 2, '  message.  ')
+while True:
+    if radio.receive() == "Comms GO":
+        break
+    show_time(start)
+    sleep(POLL_INTERVAL)
 
 # Step 5 - check for launch sequence
+oled_add_text(0, 1, 'Start launch')
+oled_add_text(0, 2, '  sequence. ')
 while True:
     if pin0.is_touched():
-    #if pin1.read_digital() == 1:
         break
     show_time(start)
     sleep(POLL_INTERVAL)
+
+radio.send('Step5 START')
+
+oled_add_text(0, 1, 'Turn blue   ')
+oled_add_text(0, 2, ' dial right.')
+while True:
+    read_inputs()
+    if radio.receive() == "Blue Dial 9":
+        break
+
+    show_time(start)
+    sleep(POLL_INTERVAL)
+
+oled_add_text(0, 1, 'Reverse     ')
+oled_add_text(0, 2, ' polarity!  ')
+while True:
+    read_inputs()
+    if button_pressed == 1:
+        break
+
+    show_time(start)
+    sleep(POLL_INTERVAL)
+
+oled_add_text(0, 1, 'Turn gold   ')
+oled_add_text(0, 2, ' to left!   ')
+while True:
+    read_inputs()
+    if radio.receive() == "Gold Dial Min":
+        break
     
+    show_time(start)
+    sleep(POLL_INTERVAL)
+
+oled_add_text(0, 1, 'Everyone    ')
+oled_add_text(0, 2, 'Stand still!')
+while True:
+    read_inputs()
+    if radio.receive() == "No Motion":
+        break
+    
+    show_time(start)
+    sleep(POLL_INTERVAL)
+
+oled_add_text(0, 1, 'Engage      ')
+oled_add_text(0, 2, 'giggle beam!')
+while True:
+    read_inputs()
+    if button_pressed == 4:
+        break
+
+    show_time(start)
+    sleep(POLL_INTERVAL)
+
+oled_add_text(0, 1, 'Shout into  ')
+oled_add_text(0, 2, ' the mic!   ')
+while True:
+    read_inputs()
+    if radio.receive() == "Noise":
+        break
+    
+    show_time(start)
+    sleep(POLL_INTERVAL)
+
+oled_add_text(0, 1, 'Add some    ')
+oled_add_text(0, 2, ' more fuel! ')
+while True:
+    read_inputs()
+    if radio.receive() == "Fuel High":
+        break
+    
+    show_time(start)
+    sleep(POLL_INTERVAL)
+
+oled_add_text(0, 1, 'Turn gold   ')
+oled_add_text(0, 2, ' dial right!')
+while True:
+    read_inputs()
+    if radio.receive() == "Gold Dial Max":
+        break
+    
+    show_time(start)
+    sleep(POLL_INTERVAL)
+
+oled_add_text(0, 1, ' Waiting... ')
+oled_add_text(0, 2, '            ')
+while True:
+    read_inputs()
+    if radio.receive() == 'Launch GO':
+        radio.send('Launch ACK')
+        break
+    
+    show_time(start)
+    sleep(POLL_INTERVAL)
+
+
 oled_add_text(0, 1, ' Press the  ')
 oled_add_text(0, 2, '  button!   ')
-
-# Final - check for big button press
 while True:
     if pin0.is_touched():
         break
     show_time(start)
     sleep(POLL_INTERVAL)
-
 
 oled_add_text(0, 0, '************')
 oled_add_text(0, 1, 'Well Done!!!')

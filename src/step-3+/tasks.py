@@ -46,27 +46,47 @@ def oled_add_text(x, y, text):
 oled_initialize()
 oled_clear_screen()
 
-
 ############################
 ## Start of our code
 ############################
 
+DIR_DICT = { 0: 'S', 1: 'SW', 2: 'W', 3: 'NW', 4: 'N', 5: 'NE', 6: 'E', 7: 'SE', 8: 'S' }
 POLL_INTERVAL = 200
+
+blue_val = 0
+gold_val = 0
+no_motion_count = 0
 
 time = 0
 start = 0
 running = False
 
+def read_inputs():
+    global blue_val, gold_val, no_motion_count
+    blue_val = int(pin0.read_analog() / 100)
+    gold_val = int(pin1.read_analog() / 100)
+
+    if pin2.read_analog() < 100:
+        no_motion_count += 1
+    else:
+        no_motion_count = 0
+
+def transmit_inputs():
+    radio.send('Blue %d' % blue_val)
+    radio.send('Gold %d' % gold_val)
+    if no_motion_count > 100:
+        radio.send('No Motion')
+
+    #TODO Mic input
+
 radio.config(group=42)
 radio.on()
 
-# Wait for the signal to start step 4
+# Wait for the signal to start step 3
 display.show(Image.ASLEEP)
 
-while radio.receive() != "Step4_START":
+while False: #radio.receive() != "Step3 START":
     sleep(1000)
-
-radio.send("Step4_START_ACK")
 
 # Step 4 - Set the course
 display.show(Image.CONFUSED)
@@ -84,39 +104,17 @@ while True:
         oled_add_text(0, 2, ' A: Oxygen  ')
         oled_add_text(0, 3, ' T: 28 deg  ')
     else:
-        dir_input = pin0.read_analog()
-        dir = ''
-
-        if dir_input > 880:
-            dir = 'S'
-        elif dir_input > 770:
-            dir = 'SE'
-        elif dir_input > 660:
-            dir = 'E'
-        elif dir_input > 550:
-            dir = 'NE'
-        elif dir_input > 440:
-            dir = 'N'
-        elif dir_input > 330:
-            dir = 'NW'
-        elif dir_input > 220:
-            dir = 'W'
-        elif dir_input > 110:
-            dir = 'SW'
-        else:
-            dir = 'S'
-        
-        dist_input = pin0.read_analog() #TODO Pin1
-        dist = int(dist_input / 100)
-        
+        read_inputs()
+                
         oled_add_text(0, 0, '-Set Course-')
-        oled_add_text(0, 1, ' Dir:   %s   ' % (dir))
-        oled_add_text(0, 2, ' Dist:  %2d   ' % (dist))
+        oled_add_text(0, 1, ' Dir:   %s   ' % (DIR_DICT[blue_val]))
+        oled_add_text(0, 2, ' Dist:  %2d   ' % (gold_val))
         oled_add_text(0, 3, '            ')
 
-        if dir == 'NE' and dist == 5:
+        if blue_val == 5 and gold_val == 5:
             break
 
+radio.send('Nav GO')
 
 # Step 5 - Send a message
 
@@ -128,7 +126,7 @@ oled_add_text(0, 3, '   message  ')
         
 message_amount = 0
 while True:    
-    if microphone.sound_level() > 100:
+    if True: # microphone.sound_level() > 100:
         message_amount += 0.5
         if message_amount >= 5:
             if True:
@@ -141,11 +139,87 @@ while True:
         
     sleep(500)
 
-display.show(Image.HAPPY)
+radio.send('Comms GO')
 oled_clear_screen()
 
 while True:
-    radio.send("Step5_GO")
-    sleep(500)
+    if radio.receive() == "Step5 Start":
+        break    
+    sleep(POLL_INTERVAL)
 
+oled_add_text(0, 1, 'Engage     ')
+oled_add_text(0, 2, 'Gigglebeam!')
 
+while True:
+    read_inputs()
+    if radio.receive() == "Button 4":
+        break
+    
+    sleep(POLL_INTERVAL)
+
+oled_add_text(0, 1, 'Eject       ')
+oled_add_text(0, 2, ' Glorps!    ')
+
+while True:
+    read_inputs()
+    if radio.receive() == "Button 5":
+        break
+    
+    sleep(POLL_INTERVAL)
+
+oled_add_text(0, 1, 'Turn blue    ')
+oled_add_text(0, 2, ' dial left ! ')
+
+while True:
+    read_inputs()
+    if blue_val == 0:
+        break
+    
+    sleep(POLL_INTERVAL)
+
+oled_add_text(0, 1, 'Engage      ')
+oled_add_text(0, 2, ' Teleport!  ')
+
+while True:
+    read_inputs()
+    if radio.receive() == "Button 2":
+        break
+    
+    sleep(POLL_INTERVAL)
+
+oled_add_text(0, 1, 'Prime Flux  ')
+oled_add_text(0, 2, ' Capacitor! ')
+
+while True:
+    read_inputs()
+    if radio.receive() == "Flick Switch": #TODO Switch
+        break
+    
+    sleep(POLL_INTERVAL)
+
+oled_add_text(0, 1, 'Turn Robot 4')
+oled_add_text(0, 2, 'upside down!')
+
+while True:
+    read_inputs()
+    if radio.receive() == "Button 1": #TODO Robot
+        break
+
+    sleep(POLL_INTERVAL)
+
+oled_add_text(0, 1, 'Activate    ')
+oled_add_text(0, 2, ' warp core! ')
+
+while True:
+    read_inputs()
+    if radio.receive() == "Button 3":
+        break
+    sleep(POLL_INTERVAL)
+
+while radio.receive != 'Launch ACK':
+    radio.send('Launch GO')
+    sleep(200)
+
+display.show(Image.HAPPY)
+oled_clear_screen()
+radio.off()

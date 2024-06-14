@@ -27,8 +27,8 @@ while True:
     sleep(POLL_INTERVAL)
 
 radio.on()
-while radio.receive() != "Fuel_Ack":
-    radio.send("Fuel_GO")
+while radio.receive() != "Fuel ACK":
+    radio.send("Fuel GO")
     sleep(1000)
 
 display.show(Image.YES)
