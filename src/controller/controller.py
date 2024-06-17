@@ -160,7 +160,7 @@ oled_add_text(0, 1, 'Turn blue   ')
 oled_add_text(0, 2, ' dial right.')
 while True:
     read_inputs()
-    if radio.receive() == "Blue Dial 9":
+    if radio.receive() == "Blue 10":
         break
 
     show_time(start)
@@ -180,7 +180,7 @@ oled_add_text(0, 1, 'Turn gold   ')
 oled_add_text(0, 2, ' to left!   ')
 while True:
     read_inputs()
-    if radio.receive() == "Gold Dial Min":
+    if radio.receive() == "Gold 0":
         break
     
     show_time(start)
@@ -230,7 +230,7 @@ oled_add_text(0, 1, 'Turn gold   ')
 oled_add_text(0, 2, ' dial right!')
 while True:
     read_inputs()
-    if radio.receive() == "Gold Dial Max":
+    if radio.receive() == "Gold 10":
         break
     
     show_time(start)

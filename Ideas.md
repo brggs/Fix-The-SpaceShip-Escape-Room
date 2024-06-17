@@ -6,5 +6,8 @@
 * Rechargable battery
 * Have a page missing from the manual with instructions
 * There's a piano attachment for the MBs, could use that to input a musical code
+* Beeping in morse for them to decode.  
+* Get them to enter a short message in morse.
+* Make a version for visually impaired kids
 
 

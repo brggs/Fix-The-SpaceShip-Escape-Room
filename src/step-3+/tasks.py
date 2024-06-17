@@ -50,7 +50,7 @@ oled_clear_screen()
 ## Start of our code
 ############################
 
-DIR_DICT = { 0: 'S', 1: 'SW', 2: 'W', 3: 'NW', 4: 'N', 5: 'NE', 6: 'E', 7: 'SE', 8: 'S' }
+DIR_DICT = { 0: 'S', 1: 'S', 2: 'SW', 3: 'W', 4: 'NW', 5: 'N', 6: 'NE', 7: 'E', 8: 'SE', 9: 'S', 10: 'S' }
 POLL_INTERVAL = 200
 
 blue_val = 0
@@ -70,8 +70,7 @@ def read_inputs():
         no_motion_count += 1
     else:
         no_motion_count = 0
-
-def transmit_inputs():
+        
     radio.send('Blue %d' % blue_val)
     radio.send('Gold %d' % gold_val)
     if no_motion_count > 100:
@@ -141,11 +140,14 @@ while True:
 
 radio.send('Comms GO')
 oled_clear_screen()
+display.show(Image.HAPPY)
 
 while True:
-    if radio.receive() == "Step5 Start":
+    if radio.receive() == "Step5 START":
         break    
     sleep(POLL_INTERVAL)
+
+display.show(Image.CONFUSED)
 
 oled_add_text(0, 1, 'Engage     ')
 oled_add_text(0, 2, 'Gigglebeam!')
@@ -216,10 +218,14 @@ while True:
         break
     sleep(POLL_INTERVAL)
 
-while radio.receive != 'Launch ACK':
+display.show(Image.HAPPY)
+oled_add_text(0, 1, '            ')
+oled_add_text(0, 2, ' Waiting... ')
+
+while radio.receive() != 'Launch ACK':
+    read_inputs()
     radio.send('Launch GO')
     sleep(200)
 
-display.show(Image.HAPPY)
 oled_clear_screen()
 radio.off()
