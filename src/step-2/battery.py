@@ -32,6 +32,7 @@ while True:
     
     sleep(POLL_INTERVAL)
 
+radio.config(group=42, power = 4)
 radio.on()
 while radio.receive() != "Battery ACK":
     radio.send("Battery GO")

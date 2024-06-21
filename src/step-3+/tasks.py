@@ -53,6 +53,8 @@ oled_clear_screen()
 DIR_DICT = { 0: 'S', 1: 'S', 2: 'SW', 3: 'W', 4: 'NW', 5: 'N', 6: 'NE', 7: 'E', 8: 'SE', 9: 'S', 10: 'S' }
 POLL_INTERVAL = 200
 
+WAIT_FOR_START_MESSAGE = True
+
 blue_val = 0
 gold_val = 0
 no_motion_count = 0
@@ -73,7 +75,7 @@ def read_inputs():
         
     radio.send('Blue %d' % blue_val)
     radio.send('Gold %d' % gold_val)
-    if no_motion_count > 100:
+    if no_motion_count > 25:
         radio.send('No Motion')
 
     #TODO Mic input
@@ -84,7 +86,7 @@ radio.on()
 # Wait for the signal to start step 3
 display.show(Image.ASLEEP)
 
-while False: #radio.receive() != "Step3 START":
+while WAIT_FOR_START_MESSAGE and radio.receive() != "Step3 START":
     sleep(1000)
 
 # Step 4 - Set the course
@@ -99,7 +101,7 @@ while True:
     
     if showSensors:
         oled_add_text(0, 0, '--Sensors---')
-        oled_add_text(0, 1, ' C: Jungle  ')
+        oled_add_text(0, 1, ' C: Forest  ')
         oled_add_text(0, 2, ' A: Oxygen  ')
         oled_add_text(0, 3, ' T: 28 deg  ')
     else:
@@ -110,7 +112,7 @@ while True:
         oled_add_text(0, 2, ' Dist:  %2d   ' % (gold_val))
         oled_add_text(0, 3, '            ')
 
-        if blue_val == 5 and gold_val == 5:
+        if blue_val == 7 and gold_val == 4:
             break
 
 radio.send('Nav GO')
@@ -125,7 +127,7 @@ oled_add_text(0, 3, '   message  ')
         
 message_amount = 0
 while True:    
-    if True: # microphone.sound_level() > 100:
+    if microphone.sound_level() > 100:
         message_amount += 0.5
         if message_amount >= 5:
             if True:
@@ -194,19 +196,9 @@ oled_add_text(0, 2, ' Capacitor! ')
 
 while True:
     read_inputs()
-    if radio.receive() == "Flick Switch": #TODO Switch
+    if radio.receive() == "Flick Switch":
         break
     
-    sleep(POLL_INTERVAL)
-
-oled_add_text(0, 1, 'Turn Robot 4')
-oled_add_text(0, 2, 'upside down!')
-
-while True:
-    read_inputs()
-    if radio.receive() == "Button 1": #TODO Robot
-        break
-
     sleep(POLL_INTERVAL)
 
 oled_add_text(0, 1, 'Activate    ')

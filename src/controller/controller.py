@@ -49,6 +49,8 @@ def oled_add_text(x, y, text):
 
 POLL_INTERVAL = 50
 
+SKIP_TO_STEP_3 = False
+
 button_pressed = 0 
 time = 0
 start = 0
@@ -107,7 +109,7 @@ radio.on()
 
 # Step 1 - check for fuel Go
 while True:
-    if radio.receive() == "Fuel_GO":
+    if SKIP_TO_STEP_3 or radio.receive() == "Fuel GO":
         radio.send("Fuel_ACK")
         break
 
@@ -118,8 +120,8 @@ while True:
 oled_add_text(0, 1, ' Charge the ')
 oled_add_text(0, 2, '  battery.  ')
 while True:
-    if radio.receive() == "Battery_GO":
-        radio.send('Battery_ACK')
+    if SKIP_TO_STEP_3 or radio.receive() == "Battery GO":
+        radio.send("Battery ACK")
         break
     show_time(start)
     sleep(POLL_INTERVAL)
@@ -206,26 +208,6 @@ while True:
     show_time(start)
     sleep(POLL_INTERVAL)
 
-oled_add_text(0, 1, 'Shout into  ')
-oled_add_text(0, 2, ' the mic!   ')
-while True:
-    read_inputs()
-    if radio.receive() == "Noise":
-        break
-    
-    show_time(start)
-    sleep(POLL_INTERVAL)
-
-oled_add_text(0, 1, 'Add some    ')
-oled_add_text(0, 2, ' more fuel! ')
-while True:
-    read_inputs()
-    if radio.receive() == "Fuel High":
-        break
-    
-    show_time(start)
-    sleep(POLL_INTERVAL)
-
 oled_add_text(0, 1, 'Turn gold   ')
 oled_add_text(0, 2, ' dial right!')
 while True:
@@ -256,6 +238,9 @@ while True:
     show_time(start)
     sleep(POLL_INTERVAL)
 
+# Send again in case the sci console finished first
+radio.send('Launch ACK')
+    
 oled_add_text(0, 0, '************')
 oled_add_text(0, 1, 'Well Done!!!')
 oled_add_text(0, 2, '************')
