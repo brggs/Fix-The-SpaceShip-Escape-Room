@@ -6,8 +6,8 @@ import radio
 POLL_INTERVAL = 50
 
 level = 0
-descriptions = ['F', 'B', 'N']
-messages = ['Fuel_GO', 'Battery_GO', 'Nav_GO']
+descriptions = ['Fuel', 'Battery', 'Step 3', 'Nav', 'Comms', 'Launch']
+messages = ['Fuel GO', 'Battery GO', 'Step3 START', 'Nav GO', 'Comms GO', 'Launch GO']
 radio.config(group=42)
 
 while True:
@@ -15,7 +15,7 @@ while True:
 
     if button_a.was_pressed():
         level += 1
-        if level == 3: level = 0
+        if level == len(descriptions): level = 0
 
     if button_b.was_pressed():
         radio.on()
