@@ -1,9 +1,24 @@
 from microbit import *
 import radio
 
-############################
-## OLED Code, skip down to see our code!
-############################
+# This code runs on the Science Unit.
+#
+# It is inactive at first, until it receives a message from the Control Unit 
+# telling it to wake up.
+#
+# It then shows the players the sensor information to allow them to work out
+# where they are.  They then enter a course with the dials attached to 
+# pins 0 (blue) and 1 (gold).
+#
+# Next it uses the microphone to listen for the message.
+#
+# Finally it is used in the launch sequence alongside the Control Unit, where
+# both units display a number of different tasks, and checks for the correct
+# inputs. 
+
+#############################################################################
+## This code is used to drive the OLED screen, skip down to see our code!   #
+#############################################################################
 OLED_ADDR = 0x3c
 oled_screen = bytearray('b\x40') + bytearray(512)
 
@@ -47,22 +62,27 @@ oled_initialize()
 oled_clear_screen()
 
 ############################
-## Start of our code
+## Start of our code!      # 
 ############################
 
+# This is used to convert the dial input number into a compass direction
 DIR_DICT = { 0: 'S', 1: 'S', 2: 'SW', 3: 'W', 4: 'NW', 5: 'N', 6: 'NE', 7: 'E', 8: 'SE', 9: 'S', 10: 'S' }
-POLL_INTERVAL = 200
 
+# This is here to make testing easier - change this to False to get the code
+# to skip to the start of step 3, and immediately show sensor data.
 WAIT_FOR_START_MESSAGE = True
 
+# How frequently to check for input (milliseconds)
+POLL_INTERVAL = 200
+
+# Variables to store input data
 blue_val = 0
 gold_val = 0
 no_motion_count = 0
 
-time = 0
-start = 0
-running = False
-
+# This function checks the values of dials and the switch and updates the global 
+# variables.
+# It also sends a message to the Control Unit so it can also check the inputs.
 def read_inputs():
     global blue_val, gold_val, no_motion_count
     blue_val = int(pin0.read_analog() / 100)
@@ -78,8 +98,7 @@ def read_inputs():
     if no_motion_count > 25:
         radio.send('No Motion')
 
-    #TODO Mic input
-
+# Turn on the radio
 radio.config(group=42)
 radio.on()
 
@@ -89,7 +108,9 @@ display.show(Image.ASLEEP)
 while WAIT_FOR_START_MESSAGE and radio.receive() != "Step3 START":
     sleep(1000)
 
-# Step 4 - Set the course
+# Step 3a - Find out where we are
+# Show the sensor readings, and allow the players to enter the course
+# by pushing B then turning the dials.
 display.show(Image.CONFUSED)
 
 showSensors = True
@@ -113,11 +134,13 @@ while True:
         oled_add_text(0, 3, '            ')
 
         if blue_val == 7 and gold_val == 4:
+            # The players entered the correct answer
             break
 
+# Send a message to the Control Unit so it knows we're on to the next step
 radio.send('Nav GO')
 
-# Step 5 - Send a message
+# Step 4 - Wait for the message to be shouted in the mic
 
 display.clear()
 oled_add_text(0, 0, '---Comms----')
@@ -125,6 +148,7 @@ oled_add_text(0, 1, '   Waiting  ')
 oled_add_text(0, 2, '    for     ')
 oled_add_text(0, 3, '   message  ')
         
+# Keeps track of how long the players have been shouting for
 message_amount = 0
 while True:    
     if microphone.sound_level() > 100:
@@ -133,6 +157,7 @@ while True:
             if True:
                 break
 
+    # Update the display to show how much of the message has sent
     for y in range(5):
         if message_amount > (4 - y):
             for x in range(5):
@@ -140,16 +165,27 @@ while True:
         
     sleep(500)
 
+# The message has now been sent, so send a radio message to the Control Unit
+# to let it know
 radio.send('Comms GO')
 oled_clear_screen()
 display.show(Image.HAPPY)
 
+# Wait for the message from the Control Unit to start Step 5 - the
+# launch sequence.
 while True:
     if radio.receive() == "Step5 START":
         break    
     sleep(POLL_INTERVAL)
 
 display.show(Image.CONFUSED)
+
+# For this step, we show a series of instructions, and check for the right inputs.
+# Some of the inputs happen on the Control Unit, so we wait for radio messages to
+# tell us about those.
+# Throughout this, we use the read_inputs() function, which checks for player
+# input and also sends input data to the Control Unit, as it is also running 
+# through its own series of instructions & checks.
 
 oled_add_text(0, 1, 'Engage     ')
 oled_add_text(0, 2, 'Gigglebeam!')
@@ -214,10 +250,15 @@ display.show(Image.HAPPY)
 oled_add_text(0, 1, '            ')
 oled_add_text(0, 2, ' Waiting... ')
 
+# The launch sequence steps are complete, for this unit.
+
+# Send a message to the Control Unit to let it know, until it sends a response
+# back confirming the step is complete
 while radio.receive() != 'Launch ACK':
     read_inputs()
     radio.send('Launch GO')
     sleep(200)
 
+# We are done, shut down
 oled_clear_screen()
 radio.off()
