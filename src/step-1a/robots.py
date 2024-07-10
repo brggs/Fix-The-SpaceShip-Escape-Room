@@ -5,8 +5,8 @@ from microbit import *
 # find the code to unlock the fuel for step 2. 
 
 # Each robot requires a different input to get it to reveal it's letter.
-# When this code first runs, the person setting up the challenge which input
-# is required on each robot, by pressing the A button.  Press B when the 
+# When this code first runs, the person setting up the challenge chooses which 
+# input is required on each robot, by pressing the A button.  Press B when the 
 # number of the robot is shown (1-4).  The robot is now ready for the game.
 
 # To make it easy to identify the different robots, each one displays a 
