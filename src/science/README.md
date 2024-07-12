@@ -4,7 +4,7 @@ This unit handles step 3 (Setting the course), step 4 (sending a message) and pa
 
 As with the Control Unit, this micro:bit is housed in the control console, which includes an OLED panel, dials and a PIR sensor.  
 
-Photo
+![The Science Unit](../../assets/science.jpg)
 
 This code does nothing when it first starts - it waits for a radio message from the control unit.  When it receives this, it activates the Step 3 code.
 
@@ -47,7 +47,8 @@ Note: One of these actions is for the team to "Stand still".  This uses the PIR 
 5. Use the [micro:bit editor](https://python.microbit.org/v/3/) to download the [code](refuel.py) onto the micro:bit
 6. Insert the micro:bit into the slot in the top of the console
 
-Photos
+![The Science Unit Interior](../../assets/science-interior.jpg)
+
 
 ## Setup/Reset
 

@@ -2,7 +2,7 @@
 
 In this step, teams have to charge a battery by running around with it.  The charge level is shown on the micro:bit display.
 
-Photo
+![The battery](../../assets/battery.jpg)
 
 Once the charge reaches the max level, the micro:bit sends a message to the control unit to let it know the step is complete.
 
@@ -19,7 +19,10 @@ Once the charge reaches the max level, the micro:bit sends a message to the cont
 
 1. Decorate the pringles can to look like a battery
 2. Use the [micro:bit editor](https://python.microbit.org/v/3/) to download the [code](battery.py) onto the micro:bit
-3. Attach the micro:bit to the lid of the pringles 
+3. Attach the micro:bit to the lid of the pringles - I used a ring:bit battery pack for this, screwing it onto the micro:bit with the pringles lid in the middle.  See the photo below.
+
+![The micro:bit attached to the battery](../../assets/battery-closeup.jpg)
+![A ring:bit battery pack](../../assets/ring-bit.jpg)
 
 
 ## Setup/Reset

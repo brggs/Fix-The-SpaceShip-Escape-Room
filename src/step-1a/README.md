@@ -4,7 +4,9 @@ This is the first step of the escape room.  In this step, there are four robots.
 
 Each robot requires a different input to get it to reveal it's letter.  When the code first runs, the person setting up the game can choose which robot that micro:bit should act as.  My robots (in the photos below) have small dots at the bottom to remind me which one is which!  See the instructions in the code for how this works.
 
-TODO Photo of each robot
+![Robots](../../assets/robots.jpg)
+
+![Robots - rear view](../../assets/robots-rear.jpg)
 
 
 ## Equipment List
@@ -23,6 +25,7 @@ TODO Photo of each robot
 
 ## Setup/Reset
 
-1. Turn the micro:bits on, and the robots are ready to go.
+1. Turn the micro:bits on
+2. Optionally, hide the robots around the game area
 
 No reset is required for the robots in between play throughs, however you might want to rearrange them if a team has left them in the correct order.

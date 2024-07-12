@@ -4,15 +4,15 @@ This step involves filling up the fuel tank.
 
 Teams must first unlock the fuel supply, using the code they obtained in the previous step.  I used a lockable plastic box, with a jug of water contained inside:
 
-Photos of container
+![A jug in a container](../../assets/jug-in-container.jpg)
 
-Make sure teams don't pick up the box and spill the water!
+Make sure teams don't pick up the box and spill the water!  You could also just fill the contianer with water, then have teams fill the jug from it.
 
 They must then carry water from the reserves, using a jug, to fill up the tank to a specific level.  If they overfill, they'll need to take water back out to get back to the required level.
 
 When the water is at the correct level for a few seconds, the micro:bit sends a message to the command console to indicate success.
 
-Photo
+![The refuel step components](../../assets/refuel.jpg)
 
 As you can see from the photo, this part of the build was not very sophisticated, and there is plenty of room for improvement!
 

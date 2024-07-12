@@ -4,7 +4,8 @@ This is the brains of the escape room.  It shows the players their current task,
 
 This micro:bit is housed in the control console, which includes an OLED panel, buttons and a switch.  This is also connected to the Big Red Button.
 
-Photo
+![The Control Unit](../../assets/control.jpg)
+![The Big Red Button](../../assets/big-red-button.jpg)
 
 ### Starting the game
 
@@ -47,7 +48,7 @@ To build the console:
 9.  Use the [micro:bit editor](https://python.microbit.org/v/3/) to download the [code](refuel.py) onto the micro:bit
 10. Insert the micro:bit into the slot in the top of the console
 
-Photos
+![The Control Unit interior](../../assets/control-interior.jpg)
 
 
 ## Setup/Reset
