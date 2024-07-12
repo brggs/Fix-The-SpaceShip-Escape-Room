@@ -2,6 +2,9 @@
 
 This is the complete list of parts required to build the escape room.  See the individual folders for instructions on construction.
 
+## Equipment
+
+* A laser cutter for making the console units
 
 ## Components
 
