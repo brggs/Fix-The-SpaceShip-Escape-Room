@@ -29,13 +29,13 @@ The Space Ship manual is given to teams at the start of the challenge, and tells
 For an editable version, the original Google document is [here](https://docs.google.com/document/d/1UZmQcw_lCy3J1W7tHfdochccHPePtWkxOZ1arFSAfAo/edit?usp=sharing).
 
 ### Step 1 - Robots and Refeulling
-1a. Robots: [Read Me](src/step-1a/README.md) | [Code](src/step-1a/robots.py)<br />
-1b. Refuelling: [Read Me](src/step-1b/README.md) | [Code](src/step-1b/refuel.py)
+Robots: [Read Me](src/step-1a/README.md) | [Code](src/step-1a/robots.py)<br />
+Refuelling: [Read Me](src/step-1b/README.md) | [Code](src/step-1b/refuel.py)
 
 Step 1 has teams putting robots in the correct order to find a code, which they use to unlock the fuel store.  They then have to fill up the fuel tank to the correct level.
 
 ### Step 2 - Charge the Battery
-2. Battery: [Read Me](src/step-2/README.md) | [Code](src/step-2/battery.py)
+Battery: [Read Me](src/step-2/README.md) | [Code](src/step-2/battery.py)
 
 In step 2 teams must charge a battery, by running around while holding it.
 
@@ -51,14 +51,14 @@ Control Unit: [Read Me](src/control/README.md) | [Code](src/control/control.py)
 
 In step 5, teams follow a frantic series of instructions shown on the control and science consoles.
 
-## Parts
+## Parts List
 
 This page lists all the [components](parts.md) used in the build of the escape room.  Each individual Read me also lists the parts used for that step.
 
 
 ## 💝 Thanks to
 
-- [brainthee](https://github.com/brainthee) - box design & help with construction
+- [brainthee](https://github.com/brainthee) - for designing the console boxes & help with construction
 
 
 ## Licence
