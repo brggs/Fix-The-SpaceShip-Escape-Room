@@ -13,7 +13,7 @@ Fix the Space Ship is a short escape room activity, designed to get kids interes
 
 This repo contains all the code and designs used to create the activity.  I hope it is useful either as inspiration for creating similar escape rooms, or for even having a go at recreating this one for your own groups.
 
-![](assets/robots.jpg)
+![](assets/escape-room.jpg)
 
 
 ## Components
