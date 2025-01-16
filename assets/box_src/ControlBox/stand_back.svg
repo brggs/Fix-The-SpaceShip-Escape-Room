@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   height="15.07mm"
+   viewBox="0 0 140.07 15.069999"
+   width="140.07001mm"
+   version="1.1"
+   id="svg118280"
+   sodipodi:docname="front_back_stands.svg"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs
+     id="defs118284">
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath13042">
+      <path
+         d="M 4192.04,3297.12 H 3018.27 v 110.67 h 1173.77 v -44.98 h -4.5 4.5 v -65.69"
+         id="path13040" />
+    </clipPath>
+  </defs>
+  <sodipodi:namedview
+     id="namedview118282"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="3.0921889"
+     inkscape:cx="264.69923"
+     inkscape:cy="28.620503"
+     inkscape:window-width="1850"
+     inkscape:window-height="1016"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg118280"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <!--
+Console2 - Console with slanted panel and service hatches
+
+
+
+This box is designed as a housing for electronic projects. It has hatches that can be re-opened with simple tools. It intentionally cannot be opened with bare hands - if build with thin enough material.
+
+#### Caution
+There is a chance that the latches of the back wall or the back wall itself interfere with the front panel or it's mounting frame/lips. The generator does not check for this. So depending on the variant chosen you might need to make the box deeper (increase y parameter) or the panel angle steeper (increase angle parameter) until there is enough room.
+
+It's also possible that the frame of the panel interferes with the floor if the hi parameter is too small.
+
+#### Assembly instructions
+The main body is easy to assemble by starting with the floor and then adding the four walls and (if present) the top piece.
+
+If the back wall is removable you need to add the lips and latches. The U-shaped clamps holding the latches in place need to be clued in place without also gluing the latches themselves. Make sure the springs on the latches point inwards and the angled ends point to the side walls as shown here:
+
+![Back wall details](static/samples/Console2-backwall-detail.jpg)
+
+If the panel is removable you need to add the springs with the tabs to the side lips. This photo shows the variant which has the panel glued to the frame:
+
+![Back wall details](static/samples/Console2-panel-detail.jpg)
+
+If space is tight you may consider not gluing the cross pieces in place and remove them after the glue-up. This may prevent the latches of the back wall and the panel from interfering with each other.
+
+The variant using finger joints only has the two side lips without the cross bars.
+
+#### Re-Opening
+
+The latches at the back wall lock in place when closed. To open them they need to be pressed in and can then be moved aside.
+
+To remove the panel you have to press in the four tabs at the side. It is easiest to push them in and then pull the panel up a little bit so the tabs stay in.
+
+
+
+Created with Boxes.py (https://boxes.hackerspace-bamberg.de/)
+Creation date: 2024-06-14 19:34:28
+Command line (remove spaces between dashes): boxes Console2 - -FingerJoint_style=barbs - -FingerJoint_play=0.3 - -x=140 - -y=140 - -h=90 - -outside=0 - -outside=1 - -front_height=10 - -angle=32.5 - -removable_panel=0 - -glued_panel=0 - -reference=0 - -burn=0.01
+Url: http://boxes.hackerspace-bamberg.de/boxes.py/Console2?FingerJoint_angle=90.0&FingerJoint_style=barbs&FingerJoint_surroundingspaces=0.5&FingerJoint_bottom_lip=0.0&FingerJoint_edge_width=1.0&FingerJoint_extra_length=0&FingerJoint_finger=2&FingerJoint_play=0.3&FingerJoint_space=2.0&FingerJoint_width=1&Stackable_angle=60&Stackable_bottom_stabilizers=0.0&Stackable_height=2.0&Stackable_holedistance=1.0&Stackable_width=4.0&x=140&y=140&h=90&bottom_edge=s&outside=0&outside=1&front_height=10&angle=32.5&removable_backwall=0&removable_backwall=1&removable_panel=0&glued_panel=0&thickness=3.0&format=svg&tabs=0.0&qr_code=0&debug=0&labels=0&labels=1&reference=0&inner_corners=loop&burn=0.01&language=en&render=2
+Url short: http://boxes.hackerspace-bamberg.de/boxes.py/Console2?FingerJoint_style=barbs&FingerJoint_play=0.3&x=140&y=140&h=90&outside=0&outside=1&front_height=10&angle=32.5&removable_panel=0&glued_panel=0&reference=0&burn=0.01
+SettingsUrl: http://boxes.hackerspace-bamberg.de/boxes.py/Console2?FingerJoint_angle=90.0&FingerJoint_style=barbs&FingerJoint_surroundingspaces=0.5&FingerJoint_bottom_lip=0.0&FingerJoint_edge_width=1.0&FingerJoint_extra_length=0&FingerJoint_finger=2&FingerJoint_play=0.3&FingerJoint_space=2.0&FingerJoint_width=1&Stackable_angle=60&Stackable_bottom_stabilizers=0.0&Stackable_height=2.0&Stackable_holedistance=1.0&Stackable_width=4.0&x=140&y=140&h=90&bottom_edge=s&outside=0&outside=1&front_height=10&angle=32.5&removable_backwall=0&removable_backwall=1&removable_panel=0&glued_panel=0&thickness=3.0&format=svg&tabs=0.0&qr_code=0&debug=0&labels=0&labels=1&reference=0&inner_corners=loop&burn=0.01&language=en&render=2
+SettingsUrl short: http://boxes.hackerspace-bamberg.de/boxes.py/Console2?FingerJoint_style=barbs&FingerJoint_play=0.3&x=140&y=140&h=90&outside=0&outside=1&front_height=10&angle=32.5&removable_panel=0&glued_panel=0&reference=0&burn=0.01
+-->
+  <title
+     id="title118100">Console2</title>
+  <metadata
+     id="metadata118102">
+    <rdf:RDF>
+      <cc:Work>
+        <dc:title>Console2</dc:title>
+        <dc:date>2024-06-14 19:34:28</dc:date>
+        <dc:source>http://boxes.hackerspace-bamberg.de/boxes.py/Console2?FingerJoint_angle=90.0&amp;FingerJoint_style=barbs&amp;FingerJoint_surroundingspaces=0.5&amp;FingerJoint_bottom_lip=0.0&amp;FingerJoint_edge_width=1.0&amp;FingerJoint_extra_length=0&amp;FingerJoint_finger=2&amp;FingerJoint_play=0.3&amp;FingerJoint_space=2.0&amp;FingerJoint_width=1&amp;Stackable_angle=60&amp;Stackable_bottom_stabilizers=0.0&amp;Stackable_height=2.0&amp;Stackable_holedistance=1.0&amp;Stackable_width=4.0&amp;x=140&amp;y=140&amp;h=90&amp;bottom_edge=s&amp;outside=0&amp;outside=1&amp;front_height=10&amp;angle=32.5&amp;removable_backwall=0&amp;removable_backwall=1&amp;removable_panel=0&amp;glued_panel=0&amp;thickness=3.0&amp;format=svg&amp;tabs=0.0&amp;qr_code=0&amp;debug=0&amp;labels=0&amp;labels=1&amp;reference=0&amp;inner_corners=loop&amp;burn=0.01&amp;language=en&amp;render=2</dc:source>
+        <dc:source>http://boxes.hackerspace-bamberg.de/boxes.py/Console2?FingerJoint_style=barbs&amp;FingerJoint_play=0.3&amp;x=140&amp;y=140&amp;h=90&amp;outside=0&amp;outside=1&amp;front_height=10&amp;angle=32.5&amp;removable_panel=0&amp;glued_panel=0&amp;reference=0&amp;burn=0.01</dc:source>
+        <dc:description>Console with slanted panel and service hatches
+
+
+This box is designed as a housing for electronic projects. It has hatches that can be re-opened with simple tools. It intentionally cannot be opened with bare hands - if build with thin enough material.
+
+#### Caution
+There is a chance that the latches of the back wall or the back wall itself interfere with the front panel or it's mounting frame/lips. The generator does not check for this. So depending on the variant chosen you might need to make the box deeper (increase y parameter) or the panel angle steeper (increase angle parameter) until there is enough room.
+
+It's also possible that the frame of the panel interferes with the floor if the hi parameter is too small.
+
+#### Assembly instructions
+The main body is easy to assemble by starting with the floor and then adding the four walls and (if present) the top piece.
+
+If the back wall is removable you need to add the lips and latches. The U-shaped clamps holding the latches in place need to be clued in place without also gluing the latches themselves. Make sure the springs on the latches point inwards and the angled ends point to the side walls as shown here:
+
+![Back wall details](static/samples/Console2-backwall-detail.jpg)
+
+If the panel is removable you need to add the springs with the tabs to the side lips. This photo shows the variant which has the panel glued to the frame:
+
+![Back wall details](static/samples/Console2-panel-detail.jpg)
+
+If space is tight you may consider not gluing the cross pieces in place and remove them after the glue-up. This may prevent the latches of the back wall and the panel from interfering with each other.
+
+The variant using finger joints only has the two side lips without the cross bars.
+
+#### Re-Opening
+
+The latches at the back wall lock in place when closed. To open them they need to be pressed in and can then be moved aside.
+
+To remove the panel you have to press in the four tabs at the side. It is easiest to push them in and then pull the panel up a little bit so the tabs stay in.
+
+
+Created with Boxes.py (https://boxes.hackerspace-bamberg.de/)
+Command line: boxes Console2 --FingerJoint_angle=90.0 --FingerJoint_style=barbs --FingerJoint_surroundingspaces=0.5 --FingerJoint_bottom_lip=0.0 --FingerJoint_edge_width=1.0 --FingerJoint_extra_length=0 --FingerJoint_finger=2 --FingerJoint_play=0.3 --FingerJoint_space=2.0 --FingerJoint_width=1 --Stackable_angle=60 --Stackable_bottom_stabilizers=0.0 --Stackable_height=2.0 --Stackable_holedistance=1.0 --Stackable_width=4.0 --x=140 --y=140 --h=90 --bottom_edge=s --outside=0 --outside=1 --front_height=10 --angle=32.5 --removable_backwall=0 --removable_backwall=1 --removable_panel=0 --glued_panel=0 --thickness=3.0 --format=svg --tabs=0.0 --qr_code=0 --debug=0 --labels=0 --labels=1 --reference=0 --inner_corners=loop --burn=0.01
+Command line short: boxes Console2 --FingerJoint_style=barbs --FingerJoint_play=0.3 --x=140 --y=140 --h=90 --outside=0 --outside=1 --front_height=10 --angle=32.5 --removable_panel=0 --glued_panel=0 --reference=0 --burn=0.01
+Url: http://boxes.hackerspace-bamberg.de/boxes.py/Console2?FingerJoint_angle=90.0&amp;FingerJoint_style=barbs&amp;FingerJoint_surroundingspaces=0.5&amp;FingerJoint_bottom_lip=0.0&amp;FingerJoint_edge_width=1.0&amp;FingerJoint_extra_length=0&amp;FingerJoint_finger=2&amp;FingerJoint_play=0.3&amp;FingerJoint_space=2.0&amp;FingerJoint_width=1&amp;Stackable_angle=60&amp;Stackable_bottom_stabilizers=0.0&amp;Stackable_height=2.0&amp;Stackable_holedistance=1.0&amp;Stackable_width=4.0&amp;x=140&amp;y=140&amp;h=90&amp;bottom_edge=s&amp;outside=0&amp;outside=1&amp;front_height=10&amp;angle=32.5&amp;removable_backwall=0&amp;removable_backwall=1&amp;removable_panel=0&amp;glued_panel=0&amp;thickness=3.0&amp;format=svg&amp;tabs=0.0&amp;qr_code=0&amp;debug=0&amp;labels=0&amp;labels=1&amp;reference=0&amp;inner_corners=loop&amp;burn=0.01&amp;language=en&amp;render=2
+Url short: http://boxes.hackerspace-bamberg.de/boxes.py/Console2?FingerJoint_style=barbs&amp;FingerJoint_play=0.3&amp;x=140&amp;y=140&amp;h=90&amp;outside=0&amp;outside=1&amp;front_height=10&amp;angle=32.5&amp;removable_panel=0&amp;glued_panel=0&amp;reference=0&amp;burn=0.01
+SettingsUrl: http://boxes.hackerspace-bamberg.de/boxes.py/Console2?FingerJoint_angle=90.0&amp;FingerJoint_style=barbs&amp;FingerJoint_surroundingspaces=0.5&amp;FingerJoint_bottom_lip=0.0&amp;FingerJoint_edge_width=1.0&amp;FingerJoint_extra_length=0&amp;FingerJoint_finger=2&amp;FingerJoint_play=0.3&amp;FingerJoint_space=2.0&amp;FingerJoint_width=1&amp;Stackable_angle=60&amp;Stackable_bottom_stabilizers=0.0&amp;Stackable_height=2.0&amp;Stackable_holedistance=1.0&amp;Stackable_width=4.0&amp;x=140&amp;y=140&amp;h=90&amp;bottom_edge=s&amp;outside=0&amp;outside=1&amp;front_height=10&amp;angle=32.5&amp;removable_backwall=0&amp;removable_backwall=1&amp;removable_panel=0&amp;glued_panel=0&amp;thickness=3.0&amp;format=svg&amp;tabs=0.0&amp;qr_code=0&amp;debug=0&amp;labels=0&amp;labels=1&amp;reference=0&amp;inner_corners=loop&amp;burn=0.01&amp;language=en&amp;render=2
+SettingsUrl short: http://boxes.hackerspace-bamberg.de/boxes.py/Console2?FingerJoint_style=barbs&amp;FingerJoint_play=0.3&amp;x=140&amp;y=140&amp;h=90&amp;outside=0&amp;outside=1&amp;front_height=10&amp;angle=32.5&amp;removable_panel=0&amp;glued_panel=0&amp;reference=0&amp;burn=0.01
+</dc:description>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="g8901"
+     transform="translate(-2.19575)">
+    <path
+       d="m 2.22075,0.035 v 4.05 c 0,0.005 0.004,0.01 0.01,0.01 h 2.99 c 0.01,0 0,-0.01 0,0 v 6.88 c 0,0.01 0.01,0 0,0 h -2.99 c -0.006,0 -0.01,0.004 -0.01,0.01 v 4.05 c 0,0.005 0.004,0.01 0.01,0.01 h 3 12 c 1.055,0 2.091,-0.278 3.005,-0.805 0.914,-0.528 1.672,-1.287 2.2,-2.2 0.526,-0.911 1.282,-1.667 2.192,-2.193 0.911,-0.526 1.944,-0.802 2.995,-0.802 h 89.216 c 1.051,0 2.084,0.276 2.995,0.802 0.91,0.526 1.666,1.282 2.192,2.193 0.528,0.913 1.286,1.672 2.2,2.2 0.914,0.527 1.95,0.805 3.005,0.805 h 12 3 c 0.006,0 0.01,-0.005 0.01,-0.01 v -4.05 c 0,-0.006 -0.004,-0.01 -0.01,-0.01 h -2.99 c -0.01,0 0,0.01 0,0 v -6.88 c 0,-0.01 -0.01,0 0,0 h 2.99 c 0.006,0 0.01,-0.005 0.01,-0.01 v -4.05 c 0,-0.006 -0.004,-0.01 -0.01,-0.01 h -3 -134 -3 c -0.006,0 -0.01,0.004 -0.01,0.01"
+       stroke="#000000"
+       stroke-width="0.05"
+       id="path118237"
+       style="fill:none;stroke:#ff0000;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1" />
+    <path
+       d="m 12.23075,6.485 h -3.44 c -0.01,0 0,0.01 0,0 v -3.88 c 0,-0.01 -0.01,0 0,0 h 6.88 c 0.01,0 0,-0.01 0,0 v 3.88 c 0,0.01 0.01,0 0,0 z"
+       stroke="#0000ff"
+       stroke-width="0.05"
+       id="path118239"
+       style="fill:none;stroke:#ff0000;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1" />
+    <path
+       d="m 24.23075,6.485 h -3.44 c -0.01,0 0,0.01 0,0 v -3.88 c 0,-0.01 -0.01,0 0,0 h 6.88 c 0.01,0 0,-0.01 0,0 v 3.88 c 0,0.01 0.01,0 0,0 z"
+       stroke="#0000ff"
+       stroke-width="0.05"
+       id="path118241"
+       style="fill:none;stroke:#ff0000;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1" />
+    <path
+       d="m 36.23075,6.485 h -3.44 c -0.01,0 0,0.01 0,0 v -3.88 c 0,-0.01 -0.01,0 0,0 h 6.88 c 0.01,0 0,-0.01 0,0 v 3.88 c 0,0.01 0.01,0 0,0 z"
+       stroke="#0000ff"
+       stroke-width="0.05"
+       id="path118243"
+       style="fill:none;stroke:#ff0000;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1" />
+    <path
+       d="m 48.23075,6.485 h -3.44 c -0.01,0 0,0.01 0,0 v -3.88 c 0,-0.01 -0.01,0 0,0 h 6.88 c 0.01,0 0,-0.01 0,0 v 3.88 c 0,0.01 0.01,0 0,0 z"
+       stroke="#0000ff"
+       stroke-width="0.05"
+       id="path118245"
+       style="fill:none;stroke:#ff0000;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1" />
+    <path
+       d="m 60.23075,6.485 h -3.44 c -0.01,0 0,0.01 0,0 v -3.88 c 0,-0.01 -0.01,0 0,0 h 6.88 c 0.01,0 0,-0.01 0,0 v 3.88 c 0,0.01 0.01,0 0,0 z"
+       stroke="#0000ff"
+       stroke-width="0.05"
+       id="path118247"
+       style="fill:none;stroke:#ff0000;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1" />
+    <path
+       d="m 72.23075,6.485 h -3.44 c -0.01,0 0,0.01 0,0 v -3.88 c 0,-0.01 -0.01,0 0,0 h 6.88 c 0.01,0 0,-0.01 0,0 v 3.88 c 0,0.01 0.01,0 0,0 z"
+       stroke="#0000ff"
+       stroke-width="0.05"
+       id="path118249"
+       style="fill:none;stroke:#ff0000;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1" />
+    <path
+       d="m 84.23075,6.485 h -3.44 c -0.01,0 0,0.01 0,0 v -3.88 c 0,-0.01 -0.01,0 0,0 h 6.88 c 0.01,0 0,-0.01 0,0 v 3.88 c 0,0.01 0.01,0 0,0 z"
+       stroke="#0000ff"
+       stroke-width="0.05"
+       id="path118251"
+       style="fill:none;stroke:#ff0000;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1" />
+    <path
+       d="m 96.23075,6.485 h -3.44 c -0.01,0 0,0.01 0,0 v -3.88 c 0,-0.01 -0.01,0 0,0 h 6.88 c 0.01,0 0,-0.01 0,0 v 3.88 c 0,0.01 0.01,0 0,0 z"
+       stroke="#0000ff"
+       stroke-width="0.05"
+       id="path118253"
+       style="fill:none;stroke:#ff0000;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1" />
+    <path
+       d="m 108.23075,6.485 h -3.44 c -0.01,0 0,0.01 0,0 v -3.88 c 0,-0.01 -0.01,0 0,0 h 6.88 c 0.01,0 0,-0.01 0,0 v 3.88 c 0,0.01 0.01,0 0,0 z"
+       stroke="#0000ff"
+       stroke-width="0.05"
+       id="path118255"
+       style="fill:none;stroke:#ff0000;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1" />
+    <path
+       d="m 120.23075,6.485 h -3.44 c -0.01,0 0,0.01 0,0 v -3.88 c 0,-0.01 -0.01,0 0,0 h 6.88 c 0.01,0 0,-0.01 0,0 v 3.88 c 0,0.01 0.01,0 0,0 z"
+       stroke="#0000ff"
+       stroke-width="0.05"
+       id="path118257"
+       style="fill:none;stroke:#ff0000;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1" />
+    <path
+       d="m 132.23075,6.485 h -3.44 c -0.01,0 0,0.01 0,0 v -3.88 c 0,-0.01 -0.01,0 0,0 h 6.88 c 0.01,0 0,-0.01 0,0 v 3.88 c 0,0.01 0.01,0 0,0 z"
+       stroke="#0000ff"
+       stroke-width="0.05"
+       id="path118259"
+       style="fill:none;stroke:#ff0000;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1" />
+    <g
+       id="g5848"
+       transform="rotate(-90,128.92065,9.0654786)">
+      <path
+         d="M 126.38313,6.3292679 V 5.9079943 h -0.14475 v 0.4212736 h -0.2699 v 1.6850943 h 0.2699 v 0.4212736 h 0.14475 V 8.0143622 h 0.26992 V 6.3292679 h -0.26992"
+         style="fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#0000ff;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="path11832" />
+      <g
+         id="g5835">
+        <path
+           d="m 125.51579,10.54838 h 1.5897 V 4.0949121 h -1.5897 z m 1.64874,0.05903 h -1.70777 V 4.0358772 h 1.70777 v 6.5715368"
+           style="fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#0000ff;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           id="path11830" />
+        <path
+           d="m 127.70835,10.54838 h 1.5897 V 4.0949121 h -1.5897 z m 1.64873,0.05903 h -1.70776 V 4.0358772 h 1.70776 v 6.5715368"
+           style="fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#0000ff;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           id="path11834" />
+      </g>
+      <path
+         d="M 128.5757,7.5099673 V 7.0886938 h -0.14499 v 0.4212735 h -0.26967 v 1.6850944 h 0.26967 v 0.4212736 h 0.14499 V 9.1950617 h 0.2699 V 7.5099673 h -0.2699"
+         style="fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#0000ff;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="path11836" />
+    </g>
+    <g
+       id="g5841"
+       transform="rotate(90,131.89975,10.686922)">
+      <path
+         d="m 129.90091,10.54838 h 1.58969 V 4.0949121 h -1.58969 z m 1.64873,0.05903 h -1.70776 V 4.0358772 h 1.70776 v 6.5715368"
+         style="fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#0000ff;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="path11838" />
+      <path
+         d="M 130.76826,4.6762886 V 4.255015 h -0.145 v 0.4212736 h -0.2699 v 1.6850943 h 0.2699 v 0.4212736 h 0.145 V 6.3613829 h 0.26967 V 4.6762886 h -0.26967"
+         style="fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#0000ff;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="path11840" />
+      <path
+         d="m 132.09347,10.54838 h 1.5897 V 4.0949121 h -1.5897 z m 1.64873,0.05903 h -1.70776 V 4.0358772 h 1.70776 v 6.5715368"
+         style="fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#0000ff;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="path11842" />
+      <path
+         d="M 132.96058,7.9822472 V 7.5609735 h -0.14476 v 0.4212737 h -0.2699 v 1.6850944 h 0.2699 v 0.4212734 h 0.14476 V 9.6673416 h 0.2699 V 7.9822472 h -0.2699"
+         style="fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#0000ff;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="path11844" />
+    </g>
+    <g
+       id="g8830"
+       style="fill:none;stroke:#0000ff;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1">
+      <path
+         d="m 16.582395,8.2756252 c -1.467844,0 -2.662173,1.1940603 -2.662173,2.6619038 0,1.468112 1.194329,2.662439 2.662173,2.662439 1.46811,0 2.661903,-1.194327 2.661903,-2.662439 0,-1.4678435 -1.193793,-2.6619038 -2.661903,-2.6619038 m 0,5.3911848 c -1.504742,0 -2.729014,-1.224273 -2.729014,-2.729281 0,-1.5044728 1.224272,-2.7287455 2.729014,-2.7287455 1.50474,0 2.728745,1.2242727 2.728745,2.7287455 0,1.505008 -1.224005,2.729281 -2.728745,2.729281"
+         style="fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#0000ff;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="path1734" />
+      <path
+         d="m 16.582395,13.900756 c -1.633612,0 -2.96296,-1.329348 -2.96296,-2.963227 0,-1.633611 1.329348,-2.9626915 2.96296,-2.9626915 1.633878,0 2.962691,1.3290805 2.962691,2.9626915 0,1.633879 -1.328813,2.963227 -2.962691,2.963227 m 0,-5.6919725 c -1.504742,0 -2.729014,1.2242727 -2.729014,2.7287455 0,1.505008 1.224272,2.729281 2.729014,2.729281 1.50474,0 2.728745,-1.224273 2.728745,-2.729281 0,-1.5044728 -1.224005,-2.7287455 -2.728745,-2.7287455 m 0,5.3911845 c -1.467844,0 -2.662173,-1.194327 -2.662173,-2.662439 0,-1.4678435 1.194329,-2.6619038 2.662173,-2.6619038 1.46811,0 2.661903,1.1940603 2.661903,2.6619038 0,1.468112 -1.193793,2.662439 -2.661903,2.662439 m 0,-5.0903969 c -1.338974,0 -2.428226,1.0892528 -2.428226,2.4279579 0,1.338973 1.089252,2.428493 2.428226,2.428493 1.338705,0 2.427957,-1.08952 2.427957,-2.428493 0,-1.3387051 -1.089252,-2.4279579 -2.427957,-2.4279579"
+         style="fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#0000ff;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="path1736" />
+      <path
+         d="m 16.582395,13.66681 c -1.504742,0 -2.729014,-1.224273 -2.729014,-2.729281 0,-1.5044728 1.224272,-2.7287455 2.729014,-2.7287455 1.50474,0 2.728745,1.2242727 2.728745,2.7287455 0,1.505008 -1.224005,2.729281 -2.728745,2.729281 m 0,-5.3911848 c -1.467844,0 -2.662173,1.1940603 -2.662173,2.6619038 0,1.468112 1.194329,2.662439 2.662173,2.662439 1.46811,0 2.661903,-1.194327 2.661903,-2.662439 0,-1.4678435 -1.193793,-2.6619038 -2.661903,-2.6619038"
+         style="fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#0000ff;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="path1738" />
+      <path
+         d="M 17.567374,8.8654364 17.203755,8.691648 17.548658,7.9670838 18.273222,8.3119871 17.928051,9.0365512 c -0.360677,-0.1711148 0,0 -0.360677,-0.1711148 z m 1.310097,2.4731436 v -0.802101 h 0.8021 v 0.802101 c -0.8021,0 0,0 -0.8021,0 z m -4.911529,1.25395 -0.216567,-0.336882 0.679112,-0.430461 0.427787,0.676438 -0.676439,0.430461 c -0.213893,-0.339556 0,0 -0.213893,-0.339556"
+         style="fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#0000ff;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="path1740" />
+      <path
+         d="m 9.4519605,8.7948516 c -1.1814937,0 -2.1429449,0.9611833 -2.1429449,2.1426774 0,1.181762 0.9614512,2.142946 2.1429449,2.142946 1.1814945,0 2.1426775,-0.961184 2.1426775,-2.142946 0,-1.1814941 -0.961183,-2.1426774 -2.1426775,-2.1426774 m 0,4.3524644 c -1.2186577,0 -2.2097866,-0.991129 -2.2097866,-2.209787 0,-1.2183901 0.9911289,-2.2095191 2.2097866,-2.2095191 1.2186585,0 2.2097875,0.991129 2.2097875,2.2095191 0,1.218658 -0.991129,2.209787 -2.2097875,2.209787"
+         style="fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#0000ff;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="path1746" />
+      <path
+         d="m 9.4519605,13.782312 c -1.5686409,0 -2.8447828,-1.276142 -2.8447828,-2.844783 0,-1.5683734 1.2761419,-2.8445153 2.8447828,-2.8445153 1.5686425,0 2.8447835,1.2761419 2.8447835,2.8445153 0,1.568641 -1.276141,2.844783 -2.8447835,2.844783 m 0,-5.0543021 c -1.2186577,0 -2.2097866,0.991129 -2.2097866,2.2095191 0,1.218658 0.9911289,2.209787 2.2097866,2.209787 1.2186585,0 2.2097875,-0.991129 2.2097875,-2.209787 0,-1.2183901 -0.991129,-2.2095191 -2.2097875,-2.2095191 m 0,4.3524651 c -1.1814937,0 -2.1429449,-0.961184 -2.1429449,-2.142946 0,-1.1814941 0.9614512,-2.1426774 2.1429449,-2.1426774 1.1814945,0 2.1426775,0.9611833 2.1426775,2.1426774 0,1.181762 -0.961183,2.142946 -2.1426775,2.142946 m 0,-3.6506272 c -0.8312432,0 -1.5079486,0.6764382 -1.5079486,1.5076812 0,0.831511 0.6767054,1.507949 1.5079486,1.507949 0.8312445,0 1.5076815,-0.676438 1.5076815,-1.507949 0,-0.831243 -0.676437,-1.5076812 -1.5076815,-1.5076812"
+         style="fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#0000ff;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="path1748" />
+      <path
+         d="m 9.4519605,13.147316 c -1.2186577,0 -2.2097866,-0.991129 -2.2097866,-2.209787 0,-1.2183901 0.9911289,-2.2095191 2.2097866,-2.2095191 1.2186585,0 2.2097875,0.991129 2.2097875,2.2095191 0,1.218658 -0.991129,2.209787 -2.2097875,2.209787 m 0,-4.3524644 c -1.1814937,0 -2.1429449,0.9611833 -2.1429449,2.1426774 0,1.181762 0.9614512,2.142946 2.1429449,2.142946 1.1814945,0 2.1426775,-0.961184 2.1426775,-2.142946 0,-1.1814941 -0.961183,-2.1426774 -2.1426775,-2.1426774"
+         style="fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#0000ff;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="path1750" />
+      <path
+         d="M 7.7044512,9.8562979 7.2903,9.5178115 7.4595431,9.3108696 C 7.950696,8.7100963 8.6765969,8.3654604 9.4519605,8.3654604 c 0.1347529,0 0.2705759,0.010427 0.4029225,0.03155 l 0.264158,0.041441 -0.08342,0.5283169 -0.2638902,-0.041709 C 9.6666564,8.9084827 9.5589079,8.9001944 9.4519605,8.9001944 c -0.6141414,0 -1.1892473,0.2729815 -1.5782661,0.7491615 z m 2.8110948,3.4394071 -0.269506,-0.461742 0.231005,-0.135021 c 0.624569,-0.364421 1.012519,-1.039255 1.012519,-1.761413 v -0.267367 h 0.534733 v 0.267367 c 0,0.911454 -0.489549,1.763284 -1.277746,2.223423 l -0.231005,0.134753"
+         style="fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#0000ff;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="path1752" />
+      <path
+         d="m 9.4519605,8.9822757 c -1.0782902,0 -1.9557881,0.8772302 -1.9557881,1.9552533 0,1.078291 0.8774979,1.955521 1.9557881,1.955521 1.0780235,0 1.9552535,-0.87723 1.9552535,-1.955521 0,-1.0780231 -0.87723,-1.9552533 -1.9552535,-1.9552533 z m 0,4.1781413 c -1.2258766,0 -2.2231549,-0.997011 -2.2231549,-2.222888 0,-1.2253421 0.9972783,-2.2226201 2.2231549,-2.2226201 1.2256105,0 2.2226205,0.997278 2.2226205,2.2226201 0,1.225877 -0.99701,2.222888 -2.2226205,2.222888"
+         style="fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#0000ff;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="path1754" />
+    </g>
+  </g>
+</svg>

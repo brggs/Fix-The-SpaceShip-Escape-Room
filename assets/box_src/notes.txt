@@ -1,0 +1,25 @@
+3 boxes
+
+ALL BOXES:
+	- Space on top flat for microbit to slot in
+	- Ensure tooth fit works
+
+- Launch Button Box
+	- Only have a button
+	- Hole for connection cable to command box
+	- Blank for microbit slot
+
+- Command Box
+	- Has buttons
+	- OLED Screen
+	- Hole for connection cable to launch button
+	- Bottom left off?
+
+- Task box
+	- Has 2x pot encoders (6mm dia)
+	- OLED screen
+	- bottom left off?
+
+
+
+https://boxes.hackerspace-bamberg.de/Console2?FingerJoint_angle=90.0&FingerJoint_style=barbs&FingerJoint_surroundingspaces=0.5&FingerJoint_bottom_lip=0.0&FingerJoint_edge_width=1.0&FingerJoint_extra_length=0&FingerJoint_finger=2&FingerJoint_play=0.3&FingerJoint_space=2.0&FingerJoint_width=1&Stackable_angle=60&Stackable_bottom_stabilizers=0.0&Stackable_height=2.0&Stackable_holedistance=1.0&Stackable_width=4.0&x=140&y=140&h=90&bottom_edge=s&outside=0&outside=1&front_height=10&angle=32.5&removable_backwall=0&removable_backwall=1&removable_panel=0&glued_panel=0&thickness=3.0&format=svg&tabs=0.0&qr_code=0&debug=0&labels=0&labels=1&reference=0&inner_corners=loop&burn=0.01&language=en&render=0
